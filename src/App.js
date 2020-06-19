@@ -7,10 +7,10 @@ class App extends React.Component {
     super(props);
     this.state = {
       data: {
-        labels: ["1", "2", "3", "4", "5"],
+        labels: ["January", "February", "March", "April", "May"],
         datasets: [
           {
-            labels: "Llamadas perdidas",
+            label: "Llamadas perdidas",
             backgroundColor: "rgba(255,0,255,0.75)",
             data: [100, 150, 90, 77],
           },
