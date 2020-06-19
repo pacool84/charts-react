@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Line } from "react-chartjs-2";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: {
+        labels: ["1", "2", "3", "4", "5"],
+        datasets: [
+          {
+            labels: "Llamadas perdidas",
+            backgroundColor: "rgba(255,0,255,0.75)",
+            data: [100, 150, 90, 77],
+          },
+          {
+            label: "Subscriptions",
+            backgroundColor: "rgba(0,255,0,0.75)",
+            data: [110, 160, 90, 87],
+          },
+        ],
+      },
+    };
+  }
+  render() {
+    return (
+      <div className="Chart-container">
+        <h1>Hello my friend APP</h1>
+        <Line
+          options={{
+            responsive: true,
+          }}
+          data={this.state.data}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
